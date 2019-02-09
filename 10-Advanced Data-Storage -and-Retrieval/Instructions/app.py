@@ -16,7 +16,7 @@ Base.classes.keys()
 
 Measurement = Base.classes.measurement
 Station = Base.classes.station
-session = Session(engine)
+
 
 
 app = Flask(__name__)
@@ -30,15 +30,15 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start><br/>"
-        f"/api/v1.0/<start>/<end><br/>"
+        f"to search by start date : /api/v1.0/yyyy-mm-dd<br/>"
+        f"to search by date range, with start date first and end date second: /api/v1.0/yyyy-mm-dd/yyyy-mm-dd<br/>"
     )
 
 
 
 @app.route("/api/v1.0/precipitation")
 def precipitation():
-
+    session = Session(engine)
     measurements = session.query(Measurement).all()
     
     all_prec = []
@@ -52,6 +52,7 @@ def precipitation():
 
 @app.route("/api/v1.0/stations")
 def stations():
+    session = Session(engine)
     stations = session.query(Measurement.station).group_by(Measurement.station).all()
 
     all_stations = []
@@ -64,7 +65,7 @@ def stations():
 
 @app.route("/api/v1.0/tobs")
 def tobs():
-
+    session = Session(engine)
     lastdate=dt.datetime.strptime(session.query(Measurement.date).order_by(Measurement.date.desc()).first()[0],'%Y-%m-%d')
     query_date=lastdate-dt.timedelta(days=365)
 
@@ -81,14 +82,14 @@ def tobs():
 
 @app.route("/api/v1.0/<start>")
 def startdate(start):
-    
+        session = Session(engine)
         search=session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
             filter(Measurement.date >= start).all()
         return jsonify(search)
 
 @app.route("/api/v1.0/<start>/<end>")
 def enddate(start,end):
-
+        session = Session(engine)
         search=session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
             filter(Measurement.date >= start).filter(Measurement.date <= end).all()
         return jsonify(search)
