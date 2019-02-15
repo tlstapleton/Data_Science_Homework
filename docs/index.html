@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Toni Web HW</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <!-- <button class="btn btn-primary" id="menu-toggle">Visualizations</button> -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="comparison.html">Comparison</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data.html">Data</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Visualizations
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="visualization1.html">Wind Speed</a>
+                <a class="dropdown-item" href="visualization2.html">Humidity</a>
+                <a class="dropdown-item" href="visualization3.html">Max Temperature</a>
+                <a class="dropdown-item" href="visualization4.html">Cloudiness</a>
+              </div>
+            </li>
+          </ul> 
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 class="p-3 mb-2 bg-secondary text-white">Latitude</h1>
+        <br>  
+        <img src = "https://cdn.britannica.com/s:700x450/19/129119-004-68F1F761.jpg">
+        <br>
+        <h1 class="p-3 mb-2 bg-primary text-white">Summary: Latitude vs. X</h1>
+        <p>In this analysis, several weather factors are measured in relationship to distance from the equator.  This analysis is based on data pulled 
+          using the Open Weather Map API to aggregate data on weather variables from over 500 cities around the world.
+        </p>
+          <p>
+            After assembling the dataset, we used Matplotlib to plot the relationship between each measured weather variable for each city and the city's distance
+          from the equator, also known as the city's latitude.  The factors chosen for analysis were : Humidity, Cloudiness, Max Temperature, and Wind Speed.
+          This site provides the source data and visualizations of all the data collected, as well as descriptions of each analysis.</p>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
