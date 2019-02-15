@@ -22,20 +22,6 @@
 
   <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Pick a visualization below </div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-      </div>
-    </div> -->
-    <!-- /#sidebar-wrapper -->
-
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
@@ -73,18 +59,18 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Latitude</h1>
+        <h1 class="p-3 mb-2 bg-secondary text-white">Latitude</h1>
         <br>  
-        <h1 class="mt-4">Summary: Latitude vs. X</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at pretium magna. Aenean mollis a elit quis efficitur. 
-          Maecenas sed nisi facilisis, fermentum augue vel, laoreet eros. Donec mollis a ligula in consectetur. Ut hendrerit condimentum lacus 
-          at cursus. Aenean aliquet eget ante at tristique. Etiam lobortis dui in augue malesuada, vitae iaculis orci consectetur. Donec orci nisl, 
-          malesuada sed lacus a, hendrerit tempus massa. Aenean porttitor est in egestas facilisis. Aenean lobortis vulputate consequat. In ullamcorper 
-          sed risus in dictum. Vestibulum ac efficitur nisl, ut imperdiet magna.</p>
+        <img src = "https://cdn.britannica.com/s:700x450/19/129119-004-68F1F761.jpg">
+        <br>
+        <h1 class="p-3 mb-2 bg-primary text-white">Summary: Latitude vs. X</h1>
+        <p>In this analysis, several weather factors are measured in relationship to distance from the equator.  This analysis is based on data pulled 
+          using the Open Weather Map API to aggregate data on weather variables from over 500 cities around the world.
+        </p>
           <p>
-            Suspendisse molestie quam eu lorem tincidunt, sit amet bibendum lectus luctus. Donec lacus lectus, venenatis sed orci a, 
-            elementum ullamcorper mauris. Cras aliquet consectetur interdum. Morbi quis tincidunt lectus. Etiam et nisl lorem. Duis in leo et leo posuere 
-            sodales id vel tellus. Proin ac mauris dui. Vivamus ultrices purus eu dui sagittis imperdiet. In hac habitasse platea dictumst.</p>
+            After assembling the dataset, we used Matplotlib to plot the relationship between each measured weather variable for each city and the city's distance
+          from the equator, also known as the city's latitude.  The factors chosen for analysis were : Humidity, Cloudiness, Max Temperature, and Wind Speed.
+          This site provides the source data and visualizations of all the data collected, as well as descriptions of each analysis.</p>
       </div>
     </div>
     <!-- /#page-content-wrapper -->
